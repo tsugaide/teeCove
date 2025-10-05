@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  --font-aclonica: "Aclonica", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+}
