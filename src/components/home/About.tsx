@@ -45,7 +45,7 @@ const about = () => {
           <img
             src="/src/assets/arrow1.png"
             alt=""
-            className="absolute -right-5 -bottom-6"
+            className="absolute -right-5 -bottom-5"
           />
         </div>
       </div>
