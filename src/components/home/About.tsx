@@ -48,6 +48,54 @@ const about = () => {
             className="absolute -right-5 -bottom-5"
           />
         </div>
+        <div className="mt-10 relative w-fit ml-auto">
+          <img
+            src="/src/assets/arrow2.png"
+            alt=""
+            className="absolute -top-6 -left-16"
+          />
+          <p className="bg-[#FFCF43] text-[10px] md:text-lg w-fit font-montserrat px-2 pt-[2px] pb-2 md:pb-3 rounded-sm">
+            Compress your file ? without downgrade quality ?
+          </p>
+          <p className="text-[7px] md:text-sm ml-5 -mt-1 md:-mt-2 text-white bg-black px-1 md:px-2 py-[1px] rounded-full w-fit font-montserrat ">
+            We got that
+          </p>
+        </div>
+        <div className="ml-auto w-fit flex gap-2">
+          <div>
+            <img src="/src/assets/imgCompress1.png" alt="" />
+            <p className="text-[7px] font-montserrat text-[#808080] text-center font-light">
+              Image1.png - 500kb
+            </p>
+          </div>
+          <div>
+            <img src="/src/assets/imgCompress2.png" alt="" />
+            <p className="text-[7px] font-montserrat text-[#808080] text-center font-light">
+              Image2.png - 100kb
+            </p>
+          </div>
+        </div>
+        <div className="text-[10px] font-montserrat px-2 py-[1px] border-black border-[0.5px] w-fit">
+          ****************
+        </div>
+        <div className="flex gap-7">
+          <div className="mt-3 w-fit ">
+            <p className="bg-[#FFCF43] text-[10px] md:text-lg w-fit font-montserrat px-2 pt-[2px] pb-2 md:pb-3 rounded-sm">
+              Protect your file ?
+            </p>
+            <p className="text-[7px] md:text-sm ml-5 -mt-1 md:-mt-2 text-white bg-black px-1 md:px-2 py-[1px] rounded-full w-fit font-montserrat ">
+              We got that
+            </p>
+          </div>
+          <div className="mt-3 w-fit ">
+            <p className="bg-[#FFCF43] text-[10px] md:text-lg w-fit font-montserrat px-2 pt-[2px] pb-2 md:pb-3 rounded-sm">
+              Edit your file ?
+            </p>
+            <p className="text-[7px] md:text-sm ml-5 -mt-1 md:-mt-2 text-white bg-black px-1 md:px-2 py-[1px] rounded-full w-fit font-montserrat ">
+              We got that
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
