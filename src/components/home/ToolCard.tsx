@@ -1,20 +1,14 @@
 import { Image, FileText, Archive, Video, Mic } from "lucide-react";
+import { Link } from "react-router-dom";
 
-type ToolType = "image" | "document" | "archive" | "video" | "audio";
-
-interface Tag {
-  label: string;
-  color: string;
-}
-
-interface ToolCardProps {
-  type: ToolType;
+type ToolCardProps = {
+  type: string;
   title: string;
   description: string;
-  tags: Tag[];
-}
-
-const icons: Record<ToolType, React.ReactNode> = {
+  color: string;
+  tags: string[];
+};
+const icons: Record<string, React.ReactNode> = {
   image: <Image size={22} />,
   document: <FileText size={22} />,
   archive: <Archive size={22} />,
@@ -22,14 +16,12 @@ const icons: Record<ToolType, React.ReactNode> = {
   audio: <Mic size={22} />,
 };
 
-export default function ToolCard({
-  type,
-  title,
-  description,
-  tags,
-}: ToolCardProps) {
+const toolCard = ({ type, title, description, tags, color }: ToolCardProps) => {
   return (
-    <div className="w-full border border-black md:rounded-2xl rounded-lg p-4 hover:shadow-md transition bg-white">
+    <Link
+      className="w-full border border-black md:rounded-2xl rounded-lg p-4 bg-white"
+      to={`/${type}`}
+    >
       <div className="flex flex-col gap-3">
         <div className="flex items-center gap-2 font-bold text-lg">
           {icons[type]}
@@ -43,13 +35,15 @@ export default function ToolCard({
           {tags.map((tag, i) => (
             <span
               key={i}
-              className={`md:px-2 md:py-1 px-1 rounded-full md:text-xs text-[6px] text-montserrat text-black ${tag.color}`}
+              className={`md:px-2 md:py-1 px-1 rounded-full md:text-xs text-[6px] text-montserrat text-black ${color}`}
             >
-              {tag.label}
+              {tag}
             </span>
           ))}
         </div>
       </div>
-    </div>
+    </Link>
   );
-}
+};
+
+export default toolCard;

@@ -1,65 +1,51 @@
 import ToolCard from "./ToolCard";
 
 export default function ToolsSection() {
-  const tools: {
-    type: "image" | "document" | "archive" | "video" | "audio";
-    title: string;
-    description: string;
-    tags: { label: string; color: string }[];
-  }[] = [
+  const tools = [
     {
       type: "image",
       title: "Image",
       description: "Convert, resize, and optimize your images effortlessly.",
+      color: "bg-[#90CAF9]",
       tags: [
-        { label: "JPG ↔ PNG ↔ GIF ↔ WEBP ↔ TIFF", color: "bg-blue-200" },
-        { label: "Resize", color: "bg-blue-300" },
-        { label: "Compress", color: "bg-blue-300" },
-        { label: "Scan text", color: "bg-blue-300" },
+        "JPG ↔ PNG ↔ GIF ↔ WEBP ↔ TIFF",
+        "Resize",
+        "Compress",
+        "Scan Text",
       ],
     },
     {
       type: "document",
       title: "Document",
-      description: "Ubah format & kompres gambar mudah.",
-      tags: [
-        { label: "Merge", color: "bg-red-200" },
-        { label: "Compress", color: "bg-red-200" },
-        { label: "Protect", color: "bg-red-200" },
-        { label: "PDF ↔ Word ↔ Excel ↔ PPT", color: "bg-red-300" },
-      ],
+      description: "Transform your PDFs, DOCX, and other document formats.",
+      color: "bg-[#ED3C50]",
+      tags: ["PDF ↔ DOCX ↔ PPT", "Merge", "Split", "Protect"],
     },
     {
       type: "archive",
       title: "Archive",
       description: "Extract, create, or convert archive files in seconds.",
+      color: "bg-[#FFB100]",
       tags: [
-        { label: "ZIP ↔ RAR ↔ 7z", color: "bg-yellow-200" },
-        { label: "Split and Join", color: "bg-yellow-200" },
-        { label: "Secure", color: "bg-yellow-300" },
-        { label: "Create/Pack Archive", color: "bg-yellow-300" },
+        "ZIP ↔ RAR ↔ 7z",
+        "Split and Join Archive",
+        "Secure",
+        "Create/Pack Archive",
       ],
     },
     {
       type: "video",
       title: "Video",
-      description: "Edit and convert videos quickly without heavy software.",
-      tags: [
-        { label: "Extract frame", color: "bg-gray-200" },
-        { label: "MP4 ↔ AVI ↔ MKV", color: "bg-gray-200" },
-        { label: "Compress", color: "bg-gray-300" },
-      ],
+      description: "Compress, convert, or change video formats easily.",
+      color: "bg-[#A6A6A6]",
+      tags: ["MP4 ↔ AVI ↔ MKV", "Extract Frame", "Compress"],
     },
     {
       type: "audio",
       title: "Audio",
-      description: "Transform and clean up your audio files with ease.",
-      tags: [
-        { label: "Voice to text", color: "bg-green-200" },
-        { label: "Text to audio", color: "bg-green-200" },
-        { label: "Compress", color: "bg-green-300" },
-        { label: "MP3 ↔ WAV ↔ AAC", color: "bg-green-300" },
-      ],
+      description: "Convert and compress audio with a single click.",
+      color: "bg-[#78EE02]",
+      tags: ["Voice to Text", "Text to Voice", "MP3 ↔ WAV ↔ AAC"],
     },
   ];
 
