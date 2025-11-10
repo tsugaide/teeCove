@@ -1,7 +1,7 @@
-import DropFile from "../DropFile";
-import ChooseFileConvert from "../ChooseFileConvert";
-import ButtonConvert from "../ButtonConvert";
-import DownloadFile from "../DownloadFile";
+import DropFileConvert from "./convert/DropFileConvert";
+import ChooseFileConvert from "./convert/ChooseFileConvert";
+import ButtonConvert from "./convert/ButtonConvert";
+import DownloadFile from "./convert/DownloadFile";
 import { useState } from "react";
 
 const ImageConvert = () => {
@@ -9,6 +9,7 @@ const ImageConvert = () => {
     filename: string;
     base64: string;
     mimetype: string;
+    size: number;
   };
 
   type ConvertResponse = {
@@ -17,19 +18,29 @@ const ImageConvert = () => {
   };
 
   const [files, setFile] = useState<File[]>([]);
-  const [selected, setSelected] = useState("");
+  const [formatSelected, setFormatSelected] = useState("");
+  const [isCompress, setIsCompress] = useState(false);
   const [isLoading, setLoading] = useState(false);
   const [results, setResult] = useState<ConvertResponse | null>(null);
 
-  const formats = ["PNG", "JPG", "TIFF", "WEBP", "BIMP"];
+  const formData = new FormData();
+  const formats = ["PNG", "JPG", "TIFF", "WEBP", "AVIF", "HEIF", "RAW"];
+
+  const handleFileSelect = (newFiles: File[]) => {
+    setFile((prev) => [...prev, ...newFiles]);
+  };
+
+  const handleFileRemove = (index: number) => {
+    setFile((prev) => prev.filter((_, i) => i !== index));
+  };
 
   const handleConvert = async () => {
     setLoading(true);
-    const formData = new FormData();
     files.forEach((file) => formData.append("images", file));
-    formData.append("format", selected.toLowerCase());
+    formData.append("format", formatSelected.toLowerCase());
+    formData.append("isCompressed", String(isCompress));
 
-    const res = await fetch("http://localhost:3000/image/convert", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/image/convert`, {
       method: "POST",
       body: formData,
     });
@@ -44,17 +55,26 @@ const ImageConvert = () => {
         <DownloadFile files={results.path} />
       ) : (
         <div>
-          <DropFile onFileSelect={setFile} file={files} />
-          <ChooseFileConvert
-            formats={formats}
-            selected={selected}
-            setSelected={setSelected}
-          />
-          <ButtonConvert
-            onConvert={handleConvert}
+          <DropFileConvert
+            onFileSelect={handleFileSelect}
+            fileRemove={handleFileRemove}
             file={files}
-            isLoading={isLoading}
           />
+          {files.length > 0 && (
+            <div>
+              <ChooseFileConvert
+                formats={formats}
+                selected={formatSelected}
+                setSelected={setFormatSelected}
+                compressed={setIsCompress}
+              />
+              <ButtonConvert
+                onConvert={handleConvert}
+                file={files}
+                isLoading={isLoading}
+              />
+            </div>
+          )}
         </div>
       )}
     </div>

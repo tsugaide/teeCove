@@ -12,7 +12,7 @@ const ButtonConvert = ({
       <button
         disabled={!file}
         onClick={onConvert}
-        className="text-sm font-aclonica text-white bg-black px-24 py-2 rounded-full mt-10"
+        className="text-sm font-aclonica text-white bg-black px-24 py-2 rounded-full mt-6"
       >
         {isLoading ? "Converting..." : "Convert"}
       </button>

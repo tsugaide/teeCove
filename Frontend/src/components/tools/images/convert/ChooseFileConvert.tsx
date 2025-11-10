@@ -4,17 +4,20 @@ import { ChevronDown } from "lucide-react";
 type CustomDropdownProps = {
   formats: string[];
   selected: string;
+  compressed: React.Dispatch<React.SetStateAction<boolean>>;
   setSelected: React.Dispatch<React.SetStateAction<string>>;
 };
 const ChooseFileConvert = ({
   formats,
   selected,
   setSelected,
+  compressed,
 }: CustomDropdownProps) => {
   const [open, setOpen] = useState(false);
+  const [isCompressed, setCompressed] = useState(false);
 
   return (
-    <div className="flex items-center justify-center gap-4 mt-5">
+    <div className="flex items-center justify-center gap-4 mt-14">
       <label className="text-lg font-aclonica font-medium">To</label>
 
       <div className="relative">
@@ -22,7 +25,7 @@ const ChooseFileConvert = ({
           onClick={() => setOpen(!open)}
           className="w-36 text-xs font-montserrat flex justify-between items-center rounded-md border bg-white px-3 py-1 hover:border-blue-400 transition"
         >
-          {selected || "Pilih Format"}
+          {selected || "Not Convert"}
           <ChevronDown
             className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${
               open ? "rotate-180" : ""
@@ -49,6 +52,19 @@ const ChooseFileConvert = ({
           </ul>
         )}
       </div>
+      <button
+        onClick={() => {
+          setCompressed(!isCompressed);
+          compressed(isCompressed);
+        }}
+        className={
+          !isCompressed
+            ? "text-xs font-montserrat text-black border rounded-full px-2 py-0.5"
+            : "text-xs font-montserrat text-white bg-black rounded-full px-2 py-0.5"
+        }
+      >
+        {isCompressed ? "Compressed" : "Compress?"}
+      </button>
     </div>
   );
 };

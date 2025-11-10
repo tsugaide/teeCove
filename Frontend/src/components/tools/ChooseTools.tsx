@@ -8,7 +8,7 @@ type chooses = {
 const ChooseTools = ({ toolTitle, tools }: chooses) => {
   const location = useLocation();
   return (
-    <div className="mx-8 mt-12">
+    <div className="mt-12">
       <h1 className="font-aclonica text-3xl">{toolTitle}</h1>
       <p className="font-montserrat text-sm font-semibold w-44 mt-14">
         Choose tool what you need
@@ -20,7 +20,8 @@ const ChooseTools = ({ toolTitle, tools }: chooses) => {
             key={i}
             className={`font-montserrat text-[10px] px-2 py-[1px] rounded-full border border-black transition-colors duration-200
         ${
-          location.pathname === `/image/${tool.toLowerCase()}`
+          decodeURIComponent(location.pathname) ===
+          `/Image/${tool.toLowerCase()}`
             ? "bg-black text-white"
             : "bg-transparent text-black hover:bg-black hover:text-white"
         }
