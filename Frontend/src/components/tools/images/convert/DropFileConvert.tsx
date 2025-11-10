@@ -1,5 +1,5 @@
-import { X } from "lucide-react";
 import DropFile from "../../DropFile";
+import { X } from "lucide-react";
 
 type files = {
   file: File[];

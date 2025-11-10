@@ -13,10 +13,9 @@ const DropFileToPdf = () => {
 
   return (
     <DropFile file={files} onFileSelect={handleFileSelect}>
-      <div className="w-full h-full overflow-auto">
+      <div className="w-full h-full overflow-auto flex gap-4">
         {files.map((f, i) => (
           <div key={i} className="flex justify-center w-full h-full p-7">
-            {i}
             <div className="flex flex-col justify-center items-center py-1">
               <img
                 src={URL.createObjectURL(f)}
