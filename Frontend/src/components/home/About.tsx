@@ -19,17 +19,17 @@ const about = () => {
           </p>
           <div className="absolute -right-16 md:-right-24 bottom-2 flex items-center">
             <img
-              src="/src/assets/documentImage.png"
+              src="/documentImage(teecove).webp"
               alt=""
               className="-mr-1 md:w-7"
             />
             <img
-              src="/src/assets/imgImage.png"
+              src="/imgImage(teecove).webp"
               alt=""
               className="z-10 -mb-5 w-4 md:w-7"
             />
             <img
-              src="/src/assets/excelImage.png"
+              src="/excelImage(teecove).webp"
               alt=""
               className="-mb-3 md:w-7"
             />
@@ -38,19 +38,19 @@ const about = () => {
             We got that
           </p>
           <img
-            src="/src/assets/pdfImage.png"
+            src="/pdfImage(teecove).webp"
             alt=""
             className="absolute left-36 mt-1"
           />
           <img
-            src="/src/assets/arrow1.png"
+            src="/arrow1(teecove).webp"
             alt=""
             className="absolute -right-5 -bottom-5"
           />
         </div>
         <div className="mt-10 relative w-fit ml-auto">
           <img
-            src="/src/assets/arrow2.png"
+            src="/arrow2(teecove).webp"
             alt=""
             className="absolute -top-6 -left-16"
           />
@@ -63,13 +63,13 @@ const about = () => {
         </div>
         <div className="ml-auto w-fit flex gap-2">
           <div>
-            <img src="/src/assets/imgCompress1.png" alt="" />
+            <img src="/imgCompress1(teecove).webp" alt="" />
             <p className="text-[7px] font-montserrat text-[#808080] text-center font-light">
               Image1.png - 500kb
             </p>
           </div>
           <div>
-            <img src="/src/assets/imgCompress2.png" alt="" />
+            <img src="/imgCompress2(teecove).webp" alt="" />
             <p className="text-[7px] font-montserrat text-[#808080] text-center font-light">
               Image2.png - 100kb
             </p>

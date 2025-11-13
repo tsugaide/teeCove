@@ -8,27 +8,27 @@ const hero = () => {
 
   const images: ImageItem[] = [
     {
-      src: "pdfImage",
+      src: "pdfImage(teecove)",
       class: "-top-10 left-16 md:-top-12 md:left-24 md:w-6",
     },
     {
-      src: "documentImage",
+      src: "documentImage(teecove)",
       class: "-top-3 left-44 md:-top-2 md:left-60 md:w-5",
     },
     {
-      src: "imgImage",
+      src: "imgImage(teecove)",
       class: "-top-8 right-10 md:-top-10 md:right-20 md:w-6",
     },
     {
-      src: "excelImage",
+      src: "excelImage(teecove)",
       class: "top-20 right-0 md:top-32 md:right-0 md:w-6",
     },
     {
-      src: "videoImage",
+      src: "videoImage(teecove)",
       class: "-bottom-10 left-22 md:-bottom-14 md:left-36 md:w-6",
     },
     {
-      src: "archiveImage",
+      src: "archiveImage(teecove)",
       class: "bottom-5 left-0 md:bottom-10 md:left-0 md:w-8",
     },
   ];
@@ -38,7 +38,7 @@ const hero = () => {
         {images.map((img, i) => (
           <img
             key={i}
-            src={`/src/assets/${img.src}.png`}
+            src={`/${img.src}.webp`}
             alt=""
             className={`absolute ${img.class}`}
           />

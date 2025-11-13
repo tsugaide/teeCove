@@ -4,7 +4,7 @@ import ToolsSection from "../components/home/ToolsSection";
 
 const home = () => {
   return (
-    <div>
+    <div className="py-5">
       <Hero />
       <About />
       <ToolsSection />
