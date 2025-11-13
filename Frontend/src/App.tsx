@@ -5,6 +5,7 @@ import Image from "./pages/Image";
 import ImageConvert from "./components/tools/images/ImageConvert";
 import ImageResize from "./components/tools/images/ImageResize";
 import ImageToPdf from "./components/tools/images/ImageToPdf";
+import ImageScan from "./components/tools/images/ImageScan";
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
           <Route path="convert and compress" element={<ImageConvert />} />
           <Route path="resize" element={<ImageResize />} />
           <Route path="to pdf" element={<ImageToPdf />} />
+          <Route path="scan text" element={<ImageScan />} />
         </Route>
       </Routes>
     </>

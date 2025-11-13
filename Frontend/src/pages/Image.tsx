@@ -3,10 +3,10 @@ import { Outlet } from "react-router-dom";
 
 const Image = () => {
   return (
-    <div className="mx-8 py-5 relative">
+    <div className="mx-8 relative pb-8">
       <ChooseTools
         toolTitle="Images"
-        tools={["Convert and Compress", "Resize", "To Pdf"]}
+        tools={["Convert and Compress", "Resize", "To Pdf", "Scan Text"]}
       />
       <Outlet />
     </div>

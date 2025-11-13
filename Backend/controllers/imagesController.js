@@ -1,5 +1,6 @@
 import sharp from "sharp";
 import { PDFDocument, PageSizes } from "pdf-lib";
+import { createWorker } from "tesseract.js";
 
 export const imageConvert = async (req, res) => {
   const format = req.body.format;
@@ -104,6 +105,20 @@ export const imageToPdf = async (req, res) => {
         mimetype: "application/pdf",
       },
     });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+export const scanText = async (req, res) => {
+  try {
+    const worker = await createWorker(["ind", "eng"]);
+
+    const { buffer } = req.files["images"][0];
+    const ret = await worker.recognize(buffer);
+    await worker.terminate();
+
+    res.json({ text: ret.data.text, confidence: ret.data.confidence });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
