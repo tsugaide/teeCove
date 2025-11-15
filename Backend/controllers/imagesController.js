@@ -11,7 +11,7 @@ export const imageConvert = async (req, res) => {
         const metadata = await sharp(file.buffer).metadata();
         const buffer = await sharp(file.buffer)
           .toFormat(format ? format : metadata.format, {
-            quality: isCompressed ? 75 : 100,
+            quality: isCompressed ? 40 : 100,
             mozjpeg: isCompressed,
             chromaSubsampling: isCompressed ? "4:2:0" : "4:4:4",
             compressionLevel: isCompressed ? 0 : 9,

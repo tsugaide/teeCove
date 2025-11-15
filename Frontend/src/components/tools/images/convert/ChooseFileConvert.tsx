@@ -55,7 +55,7 @@ const ChooseFileConvert = ({
       <button
         onClick={() => {
           setCompressed(!isCompressed);
-          compressed(isCompressed);
+          compressed(!isCompressed);
         }}
         className={
           !isCompressed

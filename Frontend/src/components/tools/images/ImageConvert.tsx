@@ -39,6 +39,7 @@ const ImageConvert = () => {
     files.forEach((file) => formData.append("images", file));
     formData.append("format", formatSelected.toLowerCase());
     formData.append("isCompressed", String(isCompress));
+    console.log(isCompress);
 
     const res = await fetch(`${import.meta.env.VITE_API_URL}/image/convert`, {
       method: "POST",
