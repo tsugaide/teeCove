@@ -18,42 +18,22 @@ const about = () => {
             Convert your file? like pdf to word, image to pdf?
           </p>
           <div className="absolute -right-16 md:-right-24 bottom-2 flex items-center">
-            <img
-              src="/documentImage(teecove).webp"
-              alt=""
-              className="-mr-1 md:w-7"
-            />
-            <img
-              src="/imgImage(teecove).webp"
-              alt=""
-              className="z-10 -mb-5 w-4 md:w-7"
-            />
-            <img
-              src="/excelImage(teecove).webp"
-              alt=""
-              className="-mb-3 md:w-7"
-            />
+            <img src="/documentImage.png" alt="" className="-mr-1 md:w-7" />
+            <img src="/imgImage.png" alt="" className="z-10 -mb-5 w-4 md:w-7" />
+            <img src="/excelImage.png" alt="" className="-mb-3 md:w-7" />
           </div>
           <p className="text-[7px] md:text-sm ml-5 -mt-1 md:-mt-2 text-white bg-black px-1 md:px-2 py-[1px] rounded-full w-fit font-montserrat ">
             We got that
           </p>
+          <img src="/pdfImage.png" alt="" className="absolute left-36 mt-1" />
           <img
-            src="/pdfImage(teecove).webp"
-            alt=""
-            className="absolute left-36 mt-1"
-          />
-          <img
-            src="/arrow1(teecove).webp"
+            src="/arrow1.png"
             alt=""
             className="absolute -right-5 -bottom-5"
           />
         </div>
         <div className="mt-10 relative w-fit ml-auto">
-          <img
-            src="/arrow2(teecove).webp"
-            alt=""
-            className="absolute -top-6 -left-16"
-          />
+          <img src="/arrow2.png" alt="" className="absolute -top-6 -left-12" />
           <p className="bg-[#FFCF43] text-[10px] md:text-lg w-fit font-montserrat px-2 pt-[2px] pb-2 md:pb-3 rounded-sm">
             Compress your file ? without downgrade quality ?
           </p>
@@ -63,13 +43,13 @@ const about = () => {
         </div>
         <div className="ml-auto w-fit flex gap-2">
           <div>
-            <img src="/imgCompress1(teecove).webp" alt="" />
+            <img src="/imgCompress1.png" alt="" />
             <p className="text-[7px] font-montserrat text-[#808080] text-center font-light">
               Image1.png - 500kb
             </p>
           </div>
           <div>
-            <img src="/imgCompress2(teecove).webp" alt="" />
+            <img src="/imgCompress2.png" alt="" />
             <p className="text-[7px] font-montserrat text-[#808080] text-center font-light">
               Image2.png - 100kb
             </p>

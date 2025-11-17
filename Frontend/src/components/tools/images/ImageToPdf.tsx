@@ -1,6 +1,7 @@
 import DropFileToPdf from "./toPdf/DropFileToPdf";
 import { useToPdfStore } from "../../../store/imageToPdfStore";
 import DownloadFileToPdf from "./toPdf/DownloadFileToPdf";
+import ToPdfSetting from "./toPdf/ToPdfSetting";
 
 const ImageToPdf = () => {
   const { files, fetchToPdf, loading, result } = useToPdfStore();
@@ -13,14 +14,17 @@ const ImageToPdf = () => {
         <div>
           <DropFileToPdf />
           {files.length > 0 && (
-            <div className="flex justify-center gap-2 mt-14">
-              <button
-                disabled={files.length < 0}
-                onClick={fetchToPdf}
-                className="text-sm font-aclonica text-white bg-black px-24 py-2 rounded-full"
-              >
-                {loading ? "Converting..." : "To Pdf"}
-              </button>
+            <div>
+              <ToPdfSetting />
+              <div className="flex justify-center gap-2 mt-8">
+                <button
+                  disabled={files.length < 0}
+                  onClick={fetchToPdf}
+                  className="text-sm font-aclonica text-white bg-black px-24 py-2 rounded-full"
+                >
+                  {loading ? "Converting..." : "To Pdf"}
+                </button>
+              </div>
             </div>
           )}
         </div>

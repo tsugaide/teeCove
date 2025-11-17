@@ -1,10 +1,15 @@
 import DropFile from "../../DropFile";
 import { X } from "lucide-react";
 
+interface FileWithId {
+  id: string;
+  file: File;
+}
+
 type files = {
   file: File[];
   fileRemove: (index: number) => void;
-  onFileSelect: (file: File[]) => void;
+  onFileSelect: (file: FileWithId[]) => void;
 };
 
 const DropFileConvert = ({ file, fileRemove, onFileSelect }: files) => {

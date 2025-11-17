@@ -6,6 +6,8 @@ import ImageConvert from "./components/tools/images/ImageConvert";
 import ImageResize from "./components/tools/images/ImageResize";
 import ImageToPdf from "./components/tools/images/ImageToPdf";
 import ImageScan from "./components/tools/images/ImageScan";
+import Document from "./pages/Document";
+import DocumentMerger from "./components/tools/documents/DocumentMerger";
 function App() {
   return (
     <>
@@ -17,6 +19,9 @@ function App() {
           <Route path="resize" element={<ImageResize />} />
           <Route path="to pdf" element={<ImageToPdf />} />
           <Route path="scan text" element={<ImageScan />} />
+        </Route>
+        <Route path="/document" element={<Document />}>
+          <Route path="merger pdf" element={<DocumentMerger />}></Route>
         </Route>
       </Routes>
     </>

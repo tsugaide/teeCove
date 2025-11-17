@@ -1,17 +1,27 @@
 import { FileImage, BadgePlus } from "lucide-react";
 
+interface FileWithId {
+  id: string;
+  file: File;
+}
+
 const DropFile = ({
   onFileSelect,
   file,
   children,
 }: {
-  onFileSelect: (file: File[]) => void;
+  onFileSelect: (file: FileWithId[]) => void;
   file: File[];
   children: React.ReactNode;
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
-      onFileSelect([...e.target.files]);
+      const filesWithId: FileWithId[] = Array.from(e.target.files).map((f) => ({
+        id: f.name + "_" + Date.now(),
+        file: f,
+      }));
+
+      onFileSelect(filesWithId);
     }
   };
 

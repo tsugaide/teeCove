@@ -4,16 +4,20 @@ import { useResizeStore } from "../../../../store/resizeStore";
 import ResizeSetting from "./ResizeSetting";
 
 const DropFileResize = () => {
+  interface FileWithId {
+    id: string;
+    file: File;
+  }
   const { files, appendFiles, isSetting, removeFiles, setIsSetting } =
     useResizeStore();
 
-  const handleFileSelect = (newFiles: File[]) => {
+  const handleFileSelect = (newFiles: FileWithId[]) => {
     newFiles.forEach((file) => {
       const img = new Image();
       img.onload = () => {
-        appendFiles(file, img.width, img.height);
+        appendFiles(file.file, img.width, img.height);
       };
-      img.src = URL.createObjectURL(file);
+      img.src = URL.createObjectURL(file.file);
     });
   };
 

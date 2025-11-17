@@ -3,11 +3,15 @@ import DropFile from "../../DropFile";
 import { useToPdfStore } from "../../../../store/imageToPdfStore";
 
 const DropFileToPdf = () => {
+  interface FileWithId {
+    id: string;
+    file: File;
+  }
   const { files, appendFiles, removeFiles } = useToPdfStore();
 
-  const handleFileSelect = (newFiles: File[]) => {
+  const handleFileSelect = (newFiles: FileWithId[]) => {
     newFiles.forEach((file) => {
-      appendFiles(file);
+      appendFiles(file.file);
     });
   };
 

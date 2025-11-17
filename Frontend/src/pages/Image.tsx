@@ -5,7 +5,7 @@ const Image = () => {
   return (
     <div className="mx-8 relative pb-8">
       <ChooseTools
-        toolTitle="Images"
+        toolTitle="Image"
         tools={["Convert and Compress", "Resize", "To Pdf", "Scan Text"]}
       />
       <Outlet />

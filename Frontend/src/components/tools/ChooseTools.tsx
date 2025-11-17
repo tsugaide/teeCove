@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 type chooses = {
   toolTitle: string;
@@ -15,20 +15,20 @@ const ChooseTools = ({ toolTitle, tools }: chooses) => {
       </p>
       <div className="mt-5 flex flex-wrap gap-3">
         {tools.map((tool, i) => (
-          <Link
-            to={tool.toLowerCase()}
+          <a
+            href={`/${toolTitle}/${tool.toLowerCase()}`}
             key={i}
             className={`font-montserrat text-[10px] px-2 py-[1px] rounded-full border border-black transition-colors duration-200
         ${
           decodeURIComponent(location.pathname) ===
-          `/Image/${tool.toLowerCase()}`
+          `/${toolTitle}/${tool.toLowerCase()}`
             ? "bg-black text-white"
             : "bg-transparent text-black hover:bg-black hover:text-white"
         }
       `}
           >
             {tool}
-          </Link>
+          </a>
         ))}
       </div>
     </div>

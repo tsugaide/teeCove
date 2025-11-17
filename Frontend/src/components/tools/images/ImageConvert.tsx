@@ -4,6 +4,11 @@ import ButtonConvert from "./convert/ButtonConvert";
 import DownloadFile from "./convert/DownloadFile";
 import { useState } from "react";
 
+interface FileWithId {
+  id: string;
+  file: File;
+}
+
 const ImageConvert = () => {
   type ConvertedFile = {
     filename: string;
@@ -26,8 +31,9 @@ const ImageConvert = () => {
   const formData = new FormData();
   const formats = ["PNG", "JPG", "TIFF", "WEBP", "AVIF", "HEIF", "RAW"];
 
-  const handleFileSelect = (newFiles: File[]) => {
-    setFile((prev) => [...prev, ...newFiles]);
+  const handleFileSelect = (newFiles: FileWithId[]) => {
+    const newFile = newFiles.filter((f) => f.file).map((f) => f.file);
+    setFile((prev) => [...prev, ...newFile]);
   };
 
   const handleFileRemove = (index: number) => {

@@ -6,7 +6,9 @@ const Navbar = () => {
 
   return (
     <nav className="sticky z-50 top-0 bg-white flex justify-between items-center px-4 md:px-8 py-2">
-      <h1 className="text-4xl md:text-5xl font-aclonica">C</h1>
+      <Link to={"/"} className="text-4xl md:text-5xl font-aclonica">
+        C
+      </Link>
 
       <ul className="flex gap-2 items-center mx-auto">
         {menuItems.map((item) => (

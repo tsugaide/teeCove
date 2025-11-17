@@ -79,14 +79,22 @@ export const imageToPdf = async (req, res) => {
           : await pdfDoc.embedJpg(buffer);
 
       const { width, height } = image.scale(1);
-      const page = pdfDoc.addPage(PageSizes.A4);
+      const margin = req.margin == "none" ? 0 : req.margin == "small" ? 10 : 70;
+      const size =
+        req.pageSize === "A4"
+          ? req.orientation === "portrait"
+            ? PageSizes.A4
+            : PageSizes.A4_LANDSCAPE
+          : [width, height];
+
+      const page = pdfDoc.addPage(size);
 
       const pageWidth = page.getWidth();
       const pageHeight = page.getHeight();
 
       const scale = Math.min(pageWidth / width, pageHeight / height);
-      const scaledWidth = width * scale;
-      const scaledHeight = height * scale;
+      const scaledWidth = width * scale - margin * 2;
+      const scaledHeight = height * scale - margin * 2;
 
       page.drawImage(image, {
         x: (page.getWidth() - scaledWidth) / 2,

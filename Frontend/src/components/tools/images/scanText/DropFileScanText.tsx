@@ -3,11 +3,15 @@ import DropFile from "../../DropFile";
 import { useScanTextStore } from "../../../../store/scanTextStore";
 
 const DropFileToPdf = () => {
+  interface FileWithId {
+    id: string;
+    file: File;
+  }
   const { files, appendFiles, removeFiles } = useScanTextStore();
 
-  const handleFileSelect = (newFiles: File[]) => {
+  const handleFileSelect = (newFiles: FileWithId[]) => {
     newFiles.forEach((file) => {
-      appendFiles(file);
+      appendFiles(file.file);
     });
   };
 

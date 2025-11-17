@@ -19,7 +19,7 @@ const ResultScanText = ({ response }: ScanTextResult) => {
     setTimeout(() => setCopy(false), 1500);
   };
   return (
-    <div className="h-48 relative bg-[#E3E3E3] rounded-lg mt-5 mx-auto">
+    <div className="h-48 relative bg-[#E3E3E3] rounded-lg mt-5 mx-auto overflow-y-auto">
       <p className="font-montserrat text-sm p-4">{response.text}</p>
       <div className="flex gap-5 absolute -bottom-10 right-5">
         <div className="flex gap-1 items-center">
